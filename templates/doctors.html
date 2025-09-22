@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect with Doctor | Nirogya - AI Public Health Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="modern-header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <span class="logo-text">Nirogya</span>
+            </div>
+            <nav class="main-nav">
+                <a href="/" class="nav-item">Home</a>
+                <a href="/chat" class="nav-item">Chat</a>
+                <a href="/doctors" class="nav-item active">Connect with Doctor</a>
+                <a href="/hospitals" class="nav-item">For Hospitals</a>
+                <a href="/about" class="nav-item">About & Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="connect-doctors-page">
+        <div class="page-container">
+            <!-- Header Section -->
+            <section class="page-header">
+                <div class="header-content">
+                    <h1 class="page-title">Connect with Expert Doctors</h1>
+                    <p class="page-subtitle">Find and connect with verified medical professionals for personalized consultations</p>
+                </div>
+                <div class="search-section">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search by specialization, location, or doctor name..." id="doctorSearch">
+                    </div>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-specialty="all">All</button>
+                        <button class="filter-btn" data-specialty="general">General</button>
+                        <button class="filter-btn" data-specialty="cardiology">Cardiology</button>
+                        <button class="filter-btn" data-specialty="pediatrics">Pediatrics</button>
+                        <button class="filter-btn" data-specialty="orthopedics">Orthopedics</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Doctors Grid -->
+            <section class="doctors-grid">
+                <div class="doctor-card" data-specialty="cardiology">
+                    <div class="doctor-avatar">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Dr. Sarah Johnson</h3>
+                        <p class="doctor-specialty">Cardiologist</p>
+                        <p class="doctor-location">Mumbai, Maharashtra</p>
+                        <div class="doctor-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.9 (127 reviews)</span>
+                        </div>
+                        <div class="doctor-experience">
+                            <i class="fas fa-clock"></i>
+                            <span>15+ years experience</span>
+                        </div>
+                    </div>
+                    <div class="doctor-actions">
+                        <button class="connect-btn">
+                            <i class="fas fa-video"></i>
+                            Connect Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-specialty="general">
+                    <div class="doctor-avatar">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Dr. Rajesh Kumar</h3>
+                        <p class="doctor-specialty">General Physician</p>
+                        <p class="doctor-location">Delhi, NCR</p>
+                        <div class="doctor-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.8 (89 reviews)</span>
+                        </div>
+                        <div class="doctor-experience">
+                            <i class="fas fa-clock"></i>
+                            <span>12+ years experience</span>
+                        </div>
+                    </div>
+                    <div class="doctor-actions">
+                        <button class="connect-btn">
+                            <i class="fas fa-video"></i>
+                            Connect Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-specialty="pediatrics">
+                    <div class="doctor-avatar">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Dr. Priya Sharma</h3>
+                        <p class="doctor-specialty">Pediatrician</p>
+                        <p class="doctor-location">Bangalore, Karnataka</p>
+                        <div class="doctor-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.9 (156 reviews)</span>
+                        </div>
+                        <div class="doctor-experience">
+                            <i class="fas fa-clock"></i>
+                            <span>18+ years experience</span>
+                        </div>
+                    </div>
+                    <div class="doctor-actions">
+                        <button class="connect-btn">
+                            <i class="fas fa-video"></i>
+                            Connect Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-specialty="orthopedics">
+                    <div class="doctor-avatar">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Dr. Amit Patel</h3>
+                        <p class="doctor-specialty">Orthopedic Surgeon</p>
+                        <p class="doctor-location">Pune, Maharashtra</p>
+                        <div class="doctor-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.7 (94 reviews)</span>
+                        </div>
+                        <div class="doctor-experience">
+                            <i class="fas fa-clock"></i>
+                            <span>20+ years experience</span>
+                        </div>
+                    </div>
+                    <div class="doctor-actions">
+                        <button class="connect-btn">
+                            <i class="fas fa-video"></i>
+                            Connect Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-specialty="general">
+                    <div class="doctor-avatar">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Dr. Neha Gupta</h3>
+                        <p class="doctor-specialty">General Physician</p>
+                        <p class="doctor-location">Chennai, Tamil Nadu</p>
+                        <div class="doctor-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.8 (112 reviews)</span>
+                        </div>
+                        <div class="doctor-experience">
+                            <i class="fas fa-clock"></i>
+                            <span>10+ years experience</span>
+                        </div>
+                    </div>
+                    <div class="doctor-actions">
+                        <button class="connect-btn">
+                            <i class="fas fa-video"></i>
+                            Connect Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-specialty="cardiology">
+                    <div class="doctor-avatar">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Dr. Vikram Singh</h3>
+                        <p class="doctor-specialty">Cardiologist</p>
+                        <p class="doctor-location">Hyderabad, Telangana</p>
+                        <div class="doctor-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.9 (143 reviews)</span>
+                        </div>
+                        <div class="doctor-experience">
+                            <i class="fas fa-clock"></i>
+                            <span>16+ years experience</span>
+                        </div>
+                    </div>
+                    <div class="doctor-actions">
+                        <button class="connect-btn">
+                            <i class="fas fa-video"></i>
+                            Connect Now
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Doctor Registration CTA -->
+            <section class="doctor-cta">
+                <div class="cta-content">
+                    <div class="cta-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <div class="cta-text">
+                        <h3>Are you a doctor?</h3>
+                        <p>Want to start your journey with us? Please let us know on this email:</p>
+                        <a href="mailto:doctors@nirogya.com" class="email-link">
+                            <i class="fas fa-envelope"></i>
+                            doctors@nirogya.com
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Nirogya. All rights reserved. | Smart India Hackathon 2025</p>
+        </div>
+    </footer>
+
+    <script>
+        // Search functionality
+        document.getElementById('doctorSearch').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const doctorCards = document.querySelectorAll('.doctor-card');
+            
+            doctorCards.forEach(card => {
+                const doctorName = card.querySelector('.doctor-name').textContent.toLowerCase();
+                const specialty = card.querySelector('.doctor-specialty').textContent.toLowerCase();
+                const location = card.querySelector('.doctor-location').textContent.toLowerCase();
+                
+                if (doctorName.includes(searchTerm) || specialty.includes(searchTerm) || location.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const specialty = this.getAttribute('data-specialty');
+                const doctorCards = document.querySelectorAll('.doctor-card');
+                
+                doctorCards.forEach(card => {
+                    if (specialty === 'all' || card.getAttribute('data-specialty') === specialty) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Connect button functionality
+        document.querySelectorAll('.connect-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const doctorName = this.closest('.doctor-card').querySelector('.doctor-name').textContent;
+                alert(`Connecting you with ${doctorName}...\n\nThis feature will be available soon!`);
+            });
+        });
+    </script>
+</body>
+</html>

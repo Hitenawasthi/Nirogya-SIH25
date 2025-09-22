@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthBot AI - Transforming Healthcare Awareness | Smart India Hackathon 2025</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Modern Header -->
+    <header class="modern-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo-icon">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                    <div class="logo-text">
+                        <h1>Nirogya</h1>
+                        <span class="tagline">Smart India Hackathon 2025</span>
+                    </div>
+            </div>
+            <nav class="main-nav">
+                <a href="/" class="nav-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="/chat" class="nav-item">
+                    <i class="fas fa-comments"></i>
+                    <span>Chat</span>
+                </a>
+                <a href="/doctors" class="nav-item">
+                    <i class="fas fa-user-md"></i>
+                    <span>Connect with Doctor</span>
+                </a>
+                <a href="/hospitals" class="nav-item">
+                    <i class="fas fa-hospital"></i>
+                    <span>For Hospitals</span>
+                </a>
+                <a href="/about" class="nav-item">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About & Contact</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Modern Consolidated Layout -->
+    <main class="consolidated-layout">
+        <!-- Hero Section with Integrated Features -->
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="hero-content">
+                        <h1 class="hero-title">
+                            <span class="title-main">Nirogya</span>
+                            <span class="title-subtitle">AI-Driven Public Health Platform</span>
+                        </h1>
+                    
+                    <div class="hero-actions">
+                        <button class="primary-button" onclick="showAIModal()">
+                            <span>Start AI Analysis</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button class="sos-button" onclick="showSOSAnimation()">
+                            <i class="fas fa-ambulance"></i>
+                            <span class="sos-text">SOS</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="capabilities-grid">
+                        <div class="capability-card">
+                            <div class="capability-icon">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                            <h4>Prescription Analysis</h4>
+                            <p>AI-powered medication insights</p>
+                        </div>
+                        
+                        <div class="capability-card">
+                            <div class="capability-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Health Tracking</h4>
+                            <p>Comprehensive monitoring</p>
+                        </div>
+                        
+                        <div class="capability-card">
+                            <div class="capability-icon">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <h4>Medical Network</h4>
+                            <p>Verified professionals</p>
+                        </div>
+                        
+                        <div class="capability-card">
+                            <div class="capability-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>Safety Assurance</h4>
+                            <p>Drug interaction checks</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+                <!-- Statistics Section - Integrated -->
+                <div class="hero-stats">
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <div class="stat-number">2.8M+</div>
+                            <div class="stat-label">Medical errors prevented</div>
+                            <div class="stat-glow"></div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">60%</div>
+                            <div class="stat-label">Reduction in confusion</div>
+                            <div class="stat-glow"></div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">10K+</div>
+                            <div class="stat-label">Active users</div>
+                            <div class="stat-glow"></div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Partner providers</div>
+                            <div class="stat-glow"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mission Quote - Centered under stats -->
+                    <div class="mission-quote-section">
+                        <p class="mission-quote-text">"Everyone deserves to know what is going inside their body. Better be early rather than late."</p>
+                    </div>
+                </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2025 HealthBot AI - Smart India Hackathon Project</p>
+                </div>
+                <div class="footer-right">
+                    <span>Powered by Google Gemini AI</span>
+                    <i class="fas fa-brain"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+        <!-- SOS Animation Modal -->
+        <div id="sosModal" class="sos-modal">
+            <div class="sos-modal-content">
+                <div class="sos-animation">
+                    <div class="sos-icon">
+                        <i class="fas fa-ambulance"></i>
+                    </div>
+                    <div class="sos-text-animation">
+                        <h2>Emergency Medical Support</h2>
+                        <p>Connecting you to nearest medical professionals...</p>
+                        <div class="loading-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sos-success">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h2>Medical Support Activated!</h2>
+                    <p>Nearest doctor/hospital has been notified and will contact you shortly.</p>
+                    <button class="close-sos" onclick="closeSOSModal()">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Analysis Modal -->
+        <div id="aiModal" class="ai-modal">
+            <div class="ai-modal-content">
+                <!-- Registration Form -->
+                <div class="registration-form" id="registrationForm">
+                    <div class="registration-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <div class="registration-text">
+                        <h2>Join Nirogya Community</h2>
+                        <p>Register to get personalized AI analysis and connect with experienced doctors for one-on-one consultations.</p>
+                    </div>
+                    
+                    <form class="user-registration" onsubmit="handleRegistration(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" id="fullName" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Age</label>
+                                <input type="number" id="age" placeholder="Age" min="1" max="120" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" id="email" placeholder="your.email@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input type="tel" id="phone" placeholder="+91 98765 43210" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Medical History (Optional)</label>
+                            <textarea id="medicalHistory" placeholder="Any existing conditions, allergies, or medications..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Emergency Contact</label>
+                            <input type="text" id="emergencyContact" placeholder="Emergency contact name and number" required>
+                        </div>
+                        
+                        <button type="submit" class="register-btn">
+                            <i class="fas fa-user-check"></i>
+                            <span>Register & Continue</span>
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="ai-greeting" style="display: none;">
+                    <div class="ai-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="greeting-text">
+                        <h2>Hi! I'm your MedBuddy 🤖</h2>
+                        <p>How can I help you today? I can analyze your prescriptions, reports, or discuss your symptoms.</p>
+                    </div>
+                    <div class="input-options">
+                        <button class="option-btn" onclick="selectOption('prescription')">
+                            <i class="fas fa-camera"></i>
+                            <span>Upload Prescription</span>
+                        </button>
+                        <button class="option-btn" onclick="selectOption('photo')">
+                            <i class="fas fa-camera-retro"></i>
+                            <span>Take Photo</span>
+                        </button>
+                        <button class="option-btn" onclick="selectOption('chat')">
+                            <i class="fas fa-comments"></i>
+                            <span>Chat with your MedBuddy</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="ai-input-form" style="display: none;">
+                    <div class="form-header">
+                        <div class="ai-avatar-small">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>Tell me more about your condition</h3>
+                    </div>
+                    
+                    <div class="input-section">
+                        <div id="prescription-upload" class="input-panel" style="display: none;">
+                            <div class="upload-area" onclick="document.getElementById('prescription-file').click()">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Click to upload prescription</p>
+                                <span>JPG, PNG, PDF supported</span>
+                            </div>
+                            <input type="file" id="prescription-file" accept="image/*,.pdf" style="display: none;">
+                        </div>
+                        
+                        <div id="photo-capture" class="input-panel" style="display: none;">
+                            <div class="camera-area" onclick="capturePhoto()">
+                                <i class="fas fa-camera"></i>
+                                <p>Click to take a photo</p>
+                                <span>Camera access required</span>
+                            </div>
+                            <video id="camera-preview" style="display: none;"></video>
+                            <canvas id="photo-canvas" style="display: none;"></canvas>
+                        </div>
+                        
+                        <div id="symptoms-input" class="input-panel" style="display: none;">
+                            <div class="form-group">
+                                <label>Describe your symptoms</label>
+                                <textarea id="symptoms-text" placeholder="Tell me what you're experiencing..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Any current medications?</label>
+                                <input type="text" id="current-meds" placeholder="List any medications you're taking">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button class="analyze-btn" onclick="startAIAnalysis()">
+                            <i class="fas fa-play"></i>
+                            <span>Start Analysis</span>
+                        </button>
+                        <button class="back-btn" onclick="goBackToGreeting()">
+                            <i class="fas fa-arrow-left"></i>
+                            <span>Back</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="ai-processing" style="display: none;">
+                    <div class="processing-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="processing-text">
+                        <h2>AI is analyzing your data...</h2>
+                        <p id="processing-message">Processing your information</p>
+                        <div class="processing-steps">
+                            <div class="step active" id="step1">
+                                <i class="fas fa-search"></i>
+                                <span>Scanning data</span>
+                            </div>
+                            <div class="step" id="step2">
+                                <i class="fas fa-microscope"></i>
+                                <span>Analyzing patterns</span>
+                            </div>
+                            <div class="step" id="step3">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Safety check</span>
+                            </div>
+                            <div class="step" id="step4">
+                                <i class="fas fa-lightbulb"></i>
+                                <span>Generating insights</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ai-transition" style="display: none;">
+                    <div class="transition-icon">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div class="transition-text">
+                        <h2>Redirecting to Chat</h2>
+                        <p>Taking you to your personalized AI chat session...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+        function showSOSAnimation() {
+            const modal = document.getElementById('sosModal');
+            modal.style.display = 'flex';
+            
+            // Show animation for 3 seconds, then show success
+            setTimeout(() => {
+                document.querySelector('.sos-animation').style.display = 'none';
+                document.querySelector('.sos-success').style.display = 'block';
+            }, 3000);
+        }
+        
+        function closeSOSModal() {
+            const modal = document.getElementById('sosModal');
+            modal.style.display = 'none';
+            
+            // Reset for next time
+            document.querySelector('.sos-animation').style.display = 'block';
+            document.querySelector('.sos-success').style.display = 'none';
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const sosModal = document.getElementById('sosModal');
+            const aiModal = document.getElementById('aiModal');
+            if (event.target === sosModal) {
+                closeSOSModal();
+            }
+            if (event.target === aiModal) {
+                closeAIModal();
+            }
+        }
+        
+        // AI Modal Functions
+        function showAIModal() {
+            const modal = document.getElementById('aiModal');
+            modal.style.display = 'flex';
+            showRegistrationForm();
+        }
+        
+        function closeAIModal() {
+            const modal = document.getElementById('aiModal');
+            modal.style.display = 'none';
+            resetAIModal();
+        }
+        
+        function resetAIModal() {
+            // Reset to registration screen
+            document.getElementById('registrationForm').style.display = 'block';
+            document.querySelector('.ai-greeting').style.display = 'none';
+            document.querySelector('.ai-input-form').style.display = 'none';
+            document.querySelector('.ai-processing').style.display = 'none';
+            document.querySelector('.ai-transition').style.display = 'none';
+            
+            // Hide all input panels
+            document.querySelectorAll('.input-panel').forEach(panel => {
+                panel.style.display = 'none';
+            });
+            
+            // Reset form data
+            document.getElementById('prescription-file').value = '';
+            document.getElementById('symptoms-text').value = '';
+            document.getElementById('current-meds').value = '';
+            
+            // Reset processing steps
+            document.querySelectorAll('.step').forEach(step => {
+                step.classList.remove('active');
+            });
+            document.getElementById('step1').classList.add('active');
+        }
+        
+        function showRegistrationForm() {
+            document.getElementById('registrationForm').style.display = 'block';
+            document.querySelector('.ai-greeting').style.display = 'none';
+        }
+        
+        function showAIGreeting() {
+            document.getElementById('registrationForm').style.display = 'none';
+            document.querySelector('.ai-greeting').style.display = 'block';
+        }
+        
+        function handleRegistration(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const userData = {
+                fullName: document.getElementById('fullName').value,
+                age: document.getElementById('age').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                medicalHistory: document.getElementById('medicalHistory').value,
+                emergencyContact: document.getElementById('emergencyContact').value
+            };
+            
+            // Store user data in sessionStorage
+            sessionStorage.setItem('userData', JSON.stringify(userData));
+            
+            // Show success message and transition to AI greeting
+            showRegistrationSuccess(userData.fullName);
+        }
+        
+        function showRegistrationSuccess(userName) {
+            // Create success message
+            const successMessage = document.createElement('div');
+            successMessage.className = 'registration-success';
+            successMessage.innerHTML = `
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Welcome to Nirogya, ${userName}! 🎉</h2>
+                <p>You're now registered and ready to get personalized health insights from our AI and experienced doctors.</p>
+                <div class="redirecting-message">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <span>Redirecting to your personalized chat...</span>
+                </div>
+            `;
+            
+            // Replace registration form with success message
+            document.getElementById('registrationForm').innerHTML = '';
+            document.getElementById('registrationForm').appendChild(successMessage);
+            
+            // Auto-redirect to chat after 2 seconds
+            setTimeout(() => {
+                window.location.href = '/chat';
+            }, 2000);
+        }
+        
+        function selectOption(option) {
+            // Hide greeting and show input form
+            document.querySelector('.ai-greeting').style.display = 'none';
+            document.querySelector('.ai-input-form').style.display = 'block';
+            
+            // Show the selected input panel
+            document.querySelectorAll('.input-panel').forEach(panel => {
+                panel.style.display = 'none';
+            });
+            
+            if (option === 'prescription') {
+                document.getElementById('prescription-upload').style.display = 'block';
+            } else if (option === 'photo') {
+                document.getElementById('photo-capture').style.display = 'block';
+            } else if (option === 'chat') {
+                document.getElementById('symptoms-input').style.display = 'block';
+            }
+        }
+        
+        function goBackToGreeting() {
+            document.querySelector('.ai-greeting').style.display = 'block';
+            document.querySelector('.ai-input-form').style.display = 'none';
+            document.querySelectorAll('.input-panel').forEach(panel => {
+                panel.style.display = 'none';
+            });
+        }
+        
+        function capturePhoto() {
+            // For demo purposes, we'll simulate photo capture
+            alert('Camera functionality would be implemented here. For demo, we\'ll proceed with a placeholder.');
+            document.querySelector('.camera-area').innerHTML = `
+                <i class="fas fa-check-circle" style="color: #10B981;"></i>
+                <p>Photo captured successfully!</p>
+                <span>Ready for analysis</span>
+            `;
+        }
+        
+        function startAIAnalysis() {
+            // Hide input form and show processing
+            document.querySelector('.ai-input-form').style.display = 'none';
+            document.querySelector('.ai-processing').style.display = 'block';
+            
+            // Animate processing steps
+            const steps = ['step1', 'step2', 'step3', 'step4'];
+            const messages = [
+                'Scanning your data...',
+                'Analyzing medical patterns...',
+                'Performing safety checks...',
+                'Generating personalized insights...'
+            ];
+            
+            steps.forEach((stepId, index) => {
+                setTimeout(() => {
+                    // Update message
+                    document.getElementById('processing-message').textContent = messages[index];
+                    
+                    // Activate step
+                    document.getElementById(stepId).classList.add('active');
+                    
+                    // If it's the last step, show transition
+                    if (index === steps.length - 1) {
+                        setTimeout(() => {
+                            showTransitionToChat();
+                        }, 1500);
+                    }
+                }, index * 2000);
+            });
+        }
+        
+        function showTransitionToChat() {
+            document.querySelector('.ai-processing').style.display = 'none';
+            document.querySelector('.ai-transition').style.display = 'block';
+            
+            // After transition animation, redirect to chat
+            setTimeout(() => {
+                // Store the user's input for the chat session
+                const userInput = {
+                    symptoms: document.getElementById('symptoms-text').value,
+                    medications: document.getElementById('current-meds').value,
+                    hasPrescription: document.getElementById('prescription-file').files.length > 0,
+                    hasPhoto: document.querySelector('.camera-area').innerHTML.includes('check-circle')
+                };
+                
+                // Store in sessionStorage for the chat page
+                sessionStorage.setItem('aiAnalysisData', JSON.stringify(userInput));
+                
+                // Redirect to chat with smooth transition
+                window.location.href = '/chat';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

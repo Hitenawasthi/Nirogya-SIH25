@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Hospitals | Nirogya - AI Public Health Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="modern-header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <span class="logo-text">Nirogya</span>
+            </div>
+            <nav class="main-nav">
+                <a href="/" class="nav-item">Home</a>
+                <a href="/chat" class="nav-item">Chat</a>
+                <a href="/doctors" class="nav-item">Connect with Doctor</a>
+                <a href="/hospitals" class="nav-item active">For Hospitals</a>
+                <a href="/about" class="nav-item">About & Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="search-hospitals-page">
+        <div class="page-container">
+            <!-- Header Section -->
+            <section class="page-header">
+                <div class="header-content">
+                    <h1 class="page-title">Search Hospitals</h1>
+                    <p class="page-subtitle">Find nearby hospitals and medical facilities for emergency care and specialized treatments</p>
+                </div>
+                <div class="search-section">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search by hospital name, location, or specialty..." id="hospitalSearch">
+                    </div>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-type="all">All</button>
+                        <button class="filter-btn" data-type="emergency">Emergency</button>
+                        <button class="filter-btn" data-type="cardiology">Cardiology</button>
+                        <button class="filter-btn" data-type="pediatrics">Pediatrics</button>
+                        <button class="filter-btn" data-type="orthopedics">Orthopedics</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hospitals Grid -->
+            <section class="hospitals-grid">
+                <div class="hospital-card" data-type="emergency">
+                    <div class="hospital-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <div class="hospital-info">
+                        <h3 class="hospital-name">Apollo Hospitals</h3>
+                        <p class="hospital-location">Mumbai, Maharashtra</p>
+                        <div class="hospital-specialties">
+                            <span class="specialty-tag">Emergency</span>
+                            <span class="specialty-tag">Cardiology</span>
+                            <span class="specialty-tag">Neurology</span>
+                        </div>
+                        <div class="hospital-details">
+                            <div class="detail-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+91 22 6666 6666</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>24/7 Emergency</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-star"></i>
+                                <span>4.8 Rating</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hospital-actions">
+                        <button class="contact-btn">
+                            <i class="fas fa-phone"></i>
+                            Contact
+                        </button>
+                        <button class="directions-btn">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Directions
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hospital-card" data-type="cardiology">
+                    <div class="hospital-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <div class="hospital-info">
+                        <h3 class="hospital-name">Fortis Healthcare</h3>
+                        <p class="hospital-location">Delhi, NCR</p>
+                        <div class="hospital-specialties">
+                            <span class="specialty-tag">Cardiology</span>
+                            <span class="specialty-tag">Oncology</span>
+                            <span class="specialty-tag">Transplant</span>
+                        </div>
+                        <div class="hospital-details">
+                            <div class="detail-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+91 11 4277 6222</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>24/7 Emergency</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-star"></i>
+                                <span>4.7 Rating</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hospital-actions">
+                        <button class="contact-btn">
+                            <i class="fas fa-phone"></i>
+                            Contact
+                        </button>
+                        <button class="directions-btn">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Directions
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hospital-card" data-type="pediatrics">
+                    <div class="hospital-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <div class="hospital-info">
+                        <h3 class="hospital-name">Rainbow Children's Hospital</h3>
+                        <p class="hospital-location">Bangalore, Karnataka</p>
+                        <div class="hospital-specialties">
+                            <span class="specialty-tag">Pediatrics</span>
+                            <span class="specialty-tag">Neonatology</span>
+                            <span class="specialty-tag">Pediatric Surgery</span>
+                        </div>
+                        <div class="hospital-details">
+                            <div class="detail-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+91 80 4530 4444</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>24/7 Emergency</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-star"></i>
+                                <span>4.9 Rating</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hospital-actions">
+                        <button class="contact-btn">
+                            <i class="fas fa-phone"></i>
+                            Contact
+                        </button>
+                        <button class="directions-btn">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Directions
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hospital-card" data-type="orthopedics">
+                    <div class="hospital-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <div class="hospital-info">
+                        <h3 class="hospital-name">Max Super Speciality Hospital</h3>
+                        <p class="hospital-location">Pune, Maharashtra</p>
+                        <div class="hospital-specialties">
+                            <span class="specialty-tag">Orthopedics</span>
+                            <span class="specialty-tag">Spine Surgery</span>
+                            <span class="specialty-tag">Sports Medicine</span>
+                        </div>
+                        <div class="hospital-details">
+                            <div class="detail-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+91 20 2612 6666</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>24/7 Emergency</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-star"></i>
+                                <span>4.6 Rating</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hospital-actions">
+                        <button class="contact-btn">
+                            <i class="fas fa-phone"></i>
+                            Contact
+                        </button>
+                        <button class="directions-btn">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Directions
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hospital-card" data-type="emergency">
+                    <div class="hospital-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <div class="hospital-info">
+                        <h3 class="hospital-name">Manipal Hospitals</h3>
+                        <p class="hospital-location">Chennai, Tamil Nadu</p>
+                        <div class="hospital-specialties">
+                            <span class="specialty-tag">Emergency</span>
+                            <span class="specialty-tag">Trauma Care</span>
+                            <span class="specialty-tag">Critical Care</span>
+                        </div>
+                        <div class="hospital-details">
+                            <div class="detail-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+91 44 2500 1000</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>24/7 Emergency</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-star"></i>
+                                <span>4.8 Rating</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hospital-actions">
+                        <button class="contact-btn">
+                            <i class="fas fa-phone"></i>
+                            Contact
+                        </button>
+                        <button class="directions-btn">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Directions
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hospital-card" data-type="cardiology">
+                    <div class="hospital-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <div class="hospital-info">
+                        <h3 class="hospital-name">Narayana Health</h3>
+                        <p class="hospital-location">Hyderabad, Telangana</p>
+                        <div class="hospital-specialties">
+                            <span class="specialty-tag">Cardiology</span>
+                            <span class="specialty-tag">Heart Surgery</span>
+                            <span class="specialty-tag">Interventional Cardiology</span>
+                        </div>
+                        <div class="hospital-details">
+                            <div class="detail-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+91 40 4567 4567</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>24/7 Emergency</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-star"></i>
+                                <span>4.7 Rating</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hospital-actions">
+                        <button class="contact-btn">
+                            <i class="fas fa-phone"></i>
+                            Contact
+                        </button>
+                        <button class="directions-btn">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Directions
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hospital Partnership CTA -->
+            <section class="hospital-cta">
+                <div class="cta-content">
+                    <div class="cta-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="cta-text">
+                        <h3>Are you a hospital?</h3>
+                        <p>Want to partner with us? Please let us know on this email:</p>
+                        <a href="mailto:hospitals@nirogya.com" class="email-link">
+                            <i class="fas fa-envelope"></i>
+                            hospitals@nirogya.com
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Nirogya. All rights reserved. | Smart India Hackathon 2025</p>
+        </div>
+    </footer>
+
+    <script>
+        // Search functionality
+        document.getElementById('hospitalSearch').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const hospitalCards = document.querySelectorAll('.hospital-card');
+            
+            hospitalCards.forEach(card => {
+                const hospitalName = card.querySelector('.hospital-name').textContent.toLowerCase();
+                const location = card.querySelector('.hospital-location').textContent.toLowerCase();
+                const specialties = card.querySelector('.hospital-specialties').textContent.toLowerCase();
+                
+                if (hospitalName.includes(searchTerm) || location.includes(searchTerm) || specialties.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const type = this.getAttribute('data-type');
+                const hospitalCards = document.querySelectorAll('.hospital-card');
+                
+                hospitalCards.forEach(card => {
+                    if (type === 'all' || card.getAttribute('data-type') === type) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Contact button functionality
+        document.querySelectorAll('.contact-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const hospitalName = this.closest('.hospital-card').querySelector('.hospital-name').textContent;
+                const phone = this.closest('.hospital-card').querySelector('.detail-item span').textContent;
+                alert(`Contacting ${hospitalName}...\n\nPhone: ${phone}\n\nThis feature will be available soon!`);
+            });
+        });
+
+        // Directions button functionality
+        document.querySelectorAll('.directions-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const hospitalName = this.closest('.hospital-card').querySelector('.hospital-name').textContent;
+                alert(`Getting directions to ${hospitalName}...\n\nThis feature will be available soon!`);
+            });
+        });
+    </script>
+</body>
+</html>
