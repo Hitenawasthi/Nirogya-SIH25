@@ -261,7 +261,7 @@ Response:
 
 For questions about this project:
 - **Developer**: Hitenawasthi
-- **Institution**: [Your College/University]
+- **Institution**: Bennett University
 - **Year**: 1st Year B.Tech CSE
 - **Hackathon**: Smart India Hackathon 2025
 
