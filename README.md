@@ -1,4 +1,4 @@
-# 🏥 AI-Driven Public Health Chatbot
+# 🏥 Nirogya - AI-Driven Public Health Chatbot
 
 **Smart India Hackathon 2025 Project**
 
@@ -16,6 +16,9 @@ This project aims to improve public health awareness and accessibility by provid
 - 📱 **Mobile Responsive**: Works seamlessly on desktop, tablet, and mobile devices
 - ⚡ **Quick Suggestions**: Pre-loaded health topics for easy interaction
 - 🔒 **Safe & Responsible**: Always reminds users to consult healthcare professionals for serious concerns
+- 📄 **Document Analysis**: Upload and analyze medical reports and prescriptions
+- 🏥 **Doctor Network**: Connect with partner doctors and hospitals
+- 🚨 **SOS Emergency**: Quick access to emergency medical support
 
 ## 🛠️ Technology Stack
 
@@ -38,13 +41,18 @@ This project aims to improve public health awareness and accessibility by provid
 ## 📁 Project Structure
 
 ```
-hackathon2.0/
+Nirogya-SIH25/
 ├── app.py                 # Main Flask application
 ├── requirements.txt       # Python dependencies
 ├── env_example.txt       # Environment variables template
+├── docker-compose.yml    # Docker configuration
 ├── README.md             # Project documentation
 ├── templates/
-│   └── index.html        # Main chat interface
+│   ├── home.html         # Homepage
+│   ├── index.html        # Chat interface
+│   ├── about.html        # About & Contact page
+│   ├── doctors.html      # Connect with Doctors
+│   └── hospitals.html    # Search Hospitals
 └── static/
     ├── css/
     │   └── style.css     # Styling and responsive design
@@ -61,11 +69,10 @@ hackathon2.0/
 
 ### Installation Steps
 
-1. **Clone or Download the Project**
+1. **Clone the Repository**
    ```bash
-   # If using git
-   git clone <repository-url>
-   cd hackathon2.0
+   git clone https://github.com/Hitenawasthi/Nirogya-SIH25.git
+   cd Nirogya-SIH25
    ```
 
 2. **Install Python Dependencies**
@@ -93,10 +100,10 @@ hackathon2.0/
    python app.py
    ```
 
-6. **Access the Chatbot**
+6. **Access the Application**
    - Open your browser
-   - Navigate to `http://localhost:5000`
-   - Start chatting with your AI health assistant!
+   - Navigate to `http://localhost:5001`
+   - Start using Nirogya!
 
 ## 💡 How It Works
 
@@ -107,10 +114,11 @@ hackathon2.0/
 4. **Response Delivery**: The AI response is sent back to the user interface
 
 ### Frontend Flow
-1. **Welcome Screen**: Users see quick health topic suggestions
+1. **Homepage**: Users see project overview and can start AI analysis
 2. **Chat Interface**: Interactive messaging with typing indicators
-3. **Real-time Updates**: Messages appear instantly with smooth animations
-4. **Responsive Design**: Works perfectly on all device sizes
+3. **Document Upload**: Users can upload medical reports for analysis
+4. **Real-time Updates**: Messages appear instantly with smooth animations
+5. **Responsive Design**: Works perfectly on all device sizes
 
 ## 🎨 Design Features
 
@@ -144,6 +152,22 @@ Response:
 }
 ```
 
+### File Upload Endpoint
+```
+POST /api/upload
+Content-Type: multipart/form-data
+
+file: [medical document]
+
+Response:
+{
+  "status": "success",
+  "is_medical": true,
+  "analysis": "Document analysis...",
+  "filename": "report.pdf"
+}
+```
+
 ### Health Check
 ```
 GET /api/health
@@ -153,20 +177,6 @@ Response:
   "status": "healthy",
   "message": "AI Public Health Chatbot is running!",
   "version": "1.0.0"
-}
-```
-
-### Suggestions
-```
-GET /api/suggestions
-
-Response:
-{
-  "suggestions": [
-    "What are the symptoms of common cold?",
-    "How to prevent seasonal flu?",
-    // ... more suggestions
-  ]
 }
 ```
 
@@ -264,7 +274,7 @@ Response:
 ## 📞 Support & Contact
 
 For questions about this project:
-- **Developer**: [Your Name]
+- **Developer**: Hitenawasthi
 - **Institution**: [Your College/University]
 - **Year**: 1st Year B.Tech CSE
 - **Hackathon**: Smart India Hackathon 2025
